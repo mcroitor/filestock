@@ -1,0 +1,12 @@
+FROM php-fpm:alpine
+
+# Install sqlite3 and necessary extensions
+RUN apk add --no-cache sqlite sqlite-dev \
+    && docker-php-ext-install pdo pdo_sqlite
+
+# Create uploads directory and set permissions
+RUN mkdir -p /var/www/html/uploads \
+    && chown -R www:www /var/www
+
+# Copy backend files
+COPY src/backend/ /var/www/html/
