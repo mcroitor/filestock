@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS files (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER,
+    user_id INTEGER NOT NULL,
     filename TEXT NOT NULL,
     title TEXT NOT NULL,
     description TEXT NOT NULL,
