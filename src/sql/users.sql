@@ -7,5 +7,3 @@ CREATE TABLE IF NOT EXISTS users (
     created_at DATETIME NOT NULL,
     language TEXT NOT NULL DEFAULT 'en'
 );
-
-CREATE INDEX IF NOT EXISTS idx_users_email_hash ON users(email_hash);
