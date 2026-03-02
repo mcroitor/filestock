@@ -6,7 +6,8 @@
 
 - [x] Create `users` table with fields: id, username, email_hash, password_hash, role (username is optional, email is hashed and used for login)
 - [x] Create `files` table with fields: id, user_id, filename, title, description, size, path, uploaded_at
-- [ ] Create `config` table for storing configuration values, fields: id, name, value, type, description
+- [x] Create `config` table for storing configuration values, fields: id, name, value, type, description
+- [x] Seed default values in `config` table (`app_name`, language, pagination, upload/auth limits)
 - [ ] Add database initialization/migration script for creating tables and indexes
 
 ### 1.1 Authentication
