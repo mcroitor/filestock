@@ -2,12 +2,22 @@
 
 ## Phase 1: Basic Functionality (MVP)
 
+### 1.0 Database Schema and Initialization
+
+- [ ] Create `users` table with fields: id, username, email_hash, password_hash, role (username is optional, email is hashed and used for login)
+- [ ] Create `files` table with fields: id, user_id, filename, title, description, size, path, uploaded_at
+- [ ] Create `config` table for storing configuration values, fields: id, name, value, type, description
+- [ ] Add database initialization/migration script for creating tables and indexes
+
 ### 1.1 Authentication
 
 - [ ] Create API endpoints for `/auth/register`, `/auth/login`, and `/auth/reset`
 - [ ] Add `login()` methods in User.php
 - [ ] Add `register()` methods in User.php
 - [ ] Add `resetPassword()` method in User.php
+- [ ] Add reset token generation and expiration handling
+- [ ] Add reset confirmation flow (token + email validation)
+- [ ] Invalidate reset token after successful password update
 - [ ] Create login page (frontend)
 - [ ] Create registration page (frontend)
 - [ ] Create password reset page (frontend)
@@ -18,6 +28,7 @@
 - [ ] Update `api.php` — check authorization for upload/delete
 - [ ] Implement check: user can delete only their own files
 - [ ] Add admin check for deleting any files
+- [ ] Define and implement endpoint access matrix for guest/user/admin
 
 ### 1.3 Frontend and Backend Integration
 
@@ -26,11 +37,11 @@
 - [ ] Add "Logout" button
 - [ ] Show upload/delete buttons based on roles
 
-### 1.4 Database Schema
+### 1.4 MVP Smoke Testing
 
-- [ ] Create `users` table with fields: id, username, email_hash, password_hash, role (username is optional, email is hashed and used for login)
-- [ ] Create `files` table with fields: id, user_id, filename, title, description, path, uploaded_at
-- [ ] Create `config` table for storing configuration values, fields: id, name, value, type, description
+- [ ] Add smoke tests for register/login/logout flow
+- [ ] Add smoke tests for upload/list/delete file flow
+- [ ] Add smoke tests for role-based restrictions (guest vs user vs admin)
 
 ## Phase 2: Core Development
 
@@ -88,6 +99,9 @@
 - [ ] CSRF protection
 - [ ] API rate limiting
 - [ ] Suspicious activity logging
+- [ ] Add password policy (minimal length and complexity rules)
+- [ ] Harden session cookies (HttpOnly, Secure, SameSite)
+- [ ] Rotate session ID after successful login
 
 ### 4.2 Testing
 
