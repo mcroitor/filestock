@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - {{ subtitle }}</title>
+    <link rel="stylesheet" href="theme/normalize.css">
+    <link rel="stylesheet" href="theme/skeleton.css">
+    <link rel="stylesheet" href="theme/app.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row header">
+            <h1>{{ title }}</h1>
+            <p>{{ subtitle }}</p>
+            <div class="user-panel twelve columns" id="userPanel"></div>
+        </div>
+
+        <div id="message" class="row message hidden"></div>
+
+        <div class="row file-list">
+            <h3 class="twelve columns">{{ file_list_title }}</h3>
+            <div id="fileList" class="twelve columns"></div>
+                <p>{{ file_list_loading }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
