@@ -5,7 +5,7 @@
 ### 1.0 Database Schema and Initialization
 
 - [x] Create `users` table with fields: id, username, email_hash, password_hash, role (username is optional, email is hashed and used for login)
-- [ ] Create `files` table with fields: id, user_id, filename, title, description, size, path, uploaded_at
+- [x] Create `files` table with fields: id, user_id, filename, title, description, size, path, uploaded_at
 - [ ] Create `config` table for storing configuration values, fields: id, name, value, type, description
 - [ ] Add database initialization/migration script for creating tables and indexes
 
