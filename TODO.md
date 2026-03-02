@@ -8,7 +8,7 @@
 - [x] Create `files` table with fields: id, user_id, filename, title, description, size, path, uploaded_at
 - [x] Create `config` table for storing configuration values, fields: id, name, value, type, description
 - [x] Seed default values in `config` table (`app_name`, language, pagination, upload/auth limits)
-- [ ] Add database initialization/migration script for creating tables and indexes
+- [x] Add database initialization/migration script for creating tables and indexes
 
 ### 1.1 Authentication
 
