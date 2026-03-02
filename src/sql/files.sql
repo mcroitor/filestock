@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS files (
     description TEXT NOT NULL,
     size INTEGER NOT NULL,
     path TEXT NOT NULL,
-    uploaded_at DATETIME NOT NULL,
+    uploaded_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
