@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS files (
     size INTEGER NOT NULL,
     path TEXT NOT NULL,
     uploaded_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE INDEX IF NOT EXISTS idx_files_user_id ON files(user_id);
