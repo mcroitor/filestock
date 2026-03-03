@@ -127,7 +127,8 @@ class User
 
     private static function ensurePassword(string $password): void
     {
-        if (trim($password) === '') {
+        $normalized = trim($password);
+        if ($normalized === '' || mb_strlen($normalized) < 8) {
             throw new \InvalidArgumentException('invalid_password');
         }
     }
