@@ -13,8 +13,8 @@
 ### 1.1 Authentication
 
 - [x] Create API endpoints for `/auth/register`, `/auth/login`, and `/auth/reset`
-- [ ] Add `login()` methods in User.php
-- [ ] Add `register()` methods in User.php
+- [x] Add `login()` methods in User.php
+- [x] Add `register()` methods in User.php
 - [ ] Add `resetPassword()` method in User.php
 - [ ] Add reset token generation and expiration handling
 - [ ] Add reset confirmation flow (token + email validation)
@@ -23,7 +23,7 @@
 - [ ] Create login page (frontend)
 - [ ] Create registration page (frontend)
 - [ ] Create password reset page (frontend)
-- [ ] Add session handling in API
+- [x] Add session handling in API
 
 ### 1.2 Role-based API protection
 
