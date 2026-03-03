@@ -105,7 +105,7 @@ class User
             setcookie(
                 session_name(),
                 '',
-                time() - 42000,
+                time() - 3600,
                 $params['path'],
                 $params['domain'],
                 (bool) $params['secure'],
