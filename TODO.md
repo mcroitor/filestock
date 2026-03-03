@@ -12,12 +12,13 @@
 
 ### 1.1 Authentication
 
-- [ ] Create API endpoints for `/auth/register`, `/auth/login`, and `/auth/reset`
+- [x] Create API endpoints for `/auth/register`, `/auth/login`, and `/auth/reset`
 - [ ] Add `login()` methods in User.php
 - [ ] Add `register()` methods in User.php
 - [ ] Add `resetPassword()` method in User.php
 - [ ] Add reset token generation and expiration handling
 - [ ] Add reset confirmation flow (token + email validation)
+- [ ] Create `cli/user-create.php` for creating users from CLI (for testing/admin purposes)
 - [ ] Invalidate reset token after successful password update
 - [ ] Create login page (frontend)
 - [ ] Create registration page (frontend)
@@ -68,6 +69,19 @@
 - [ ] Create translation files `ru.php`, `ro.php`
 - [ ] Implement language switcher in UI
 - [ ] Load translations based on user preference
+
+### 2.4 Modular System Support
+
+- [x] Define module layout (`src/backend/extensions/<module_name>`)
+- [x] Define module bootstrap contract (single entry file for route/service registration)
+- [x] Implement module loader in `api.php` (scan enabled modules and include bootstrap)
+- [x] Add module manifest format (name, version, dependencies, enabled flag)
+- [ ] Add config storage for enabled/disabled modules
+- [x] Add dependency validation between modules before bootstrap
+- [x] Add safe module initialization (isolation + clear error logging)
+- [x] Move auth routes from `api.php` to `extensions/auth` module
+- [ ] Add CLI command for module management (list/enable/disable)
+- [ ] Add docs section: how to create and connect a new module
 
 ## Phase 3: Feature Expansion
 
