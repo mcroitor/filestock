@@ -144,7 +144,7 @@ class User
 
     private static function emailHash(string $email): string
     {
-        return hash('sha256', $email);
+        return hash_hmac('sha256', $email, \config::salt);
     }
 
     private static function toPublicUser(array $user): array
