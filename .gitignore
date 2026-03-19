@@ -1,4 +1,8 @@
 # Ignore database file
-database/
+backend/db/
 # Ignore uploaded files
-uploads/
+backend/uploads/
+
+.env
+*.zip
+*.log

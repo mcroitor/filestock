@@ -1,22 +1,17 @@
-# Project Structure
+# Technical documentation FileStock
 
-```text
-.
-├── docker-compose.yml         # Main compose file
-└── src/
-    ├── backend/
-    │   ├── index.php          # Entry point for API, redirects to api.php
-    │   ├── api.php            # API request handling logic
-    │   ├── config.php         # Application configuration
-    │   ├── core/              # Application core classes
-    │   ├── localization/      # Application localization classes
-    │   └── templates/         # Application templates
-    └── frontend/
-        ├── index.html
-        ├── theme/
-        │   ├── normalize.css
-        │   ├── skeleton.css
-        │   └── app.css
-        └── js/
-            └── app.js
-```
+- [Architecture](architecture.md)
+- [API](api.md)
+- [Features](features.md)
+- [User Interface](interface.md)
+- [Database](database.md)
+- [Roles and Permissions](roles.md)
+- [Development Plan](TODO.md)
+
+A website for storing and managing files. Implemented in PHP 8.x using SQLite for data storage. The frontend is built as an SPA using native JavaScript and Skeleton CSS styles. The project is deployed using Docker and Docker Compose.
+
+The application does not store any personal user data. Authentication is based on email + password input, while only email_hash and password_hash are stored.
+
+Users can upload files, view their file list, and delete files. Each file is associated with the user who uploaded it. File uploading must be followed by a file description.
+
+Any guest user can download any hosted file, only registered users can upload and manage files.

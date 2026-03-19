@@ -1,6 +1,6 @@
-# User Roles and Permissions
+# User roles and permissions
 
-## List of Roles
+## List of roles
 
 | Role  | Description                                  |
 | ----- | -------------------------------------------- |
@@ -8,41 +8,40 @@
 | user  | User - can upload and delete their own files |
 | admin | Admin - full access to all files             |
 
-Note: `guest` is a runtime (unauthenticated) role and is not stored in the `users` table.
+## User Profile
+
+Users can edit:
+
+- **Username** - display name (default "User_{RANDOM}")
+- **Default locale** - default interface language
+- **Password** - change password
 
 ## Permissions
 
 ### Guest
 
 - View file list
+- View file information
 - Download files
 
 ### User
 
-- All permissions of Guest
+- All Guest permissions
 - Upload files
-- Delete their own files
+- Delete own files
+- Edit profile
 
 ### Admin
 
-- All permissions of User
+- All User permissions
 - Delete any files
-- Manage users
+- Manage site settings
+- Manage users (TODO)
 
-## Capabilities
+## Authentication and Authorization
 
-| Name            | Guest | User | Admin |
-| --------------- | ----- | ---- | ----- |
-| list_files      | +     | +    | +     |
-| view_file       | +     | +    | +     |
-| download_file   | +     | +    | +     |
-| upload_file     | -     | +    | +     |
-| delete_own_file | -     | +    | +     |
-| delete_any_file | -     | -    | +     |
-| list_users      | -     | -    | +     |
-| view_user       | -     | +    | +     |
-| create_user     | +     | -    | +     |
-| delete_user     | -     | -    | +     |
-| change_role     | -     | -    | +     |
-| login           | +     | -    | -     |
-| logout          | -     | +    | +     |
+The site does not contain personal user data, and the username is optional. If a user does not specify a name, the default format "User_{RANDOM}" with a pseudo-random suffix is displayed.
+
+Authentication is performed using email and password. The database stores the hashed email and hashed password. When logging in, the user enters their email and password, which are hashed and compared with the data in the database. If a match is found, the user is considered authenticated.
+
+Password recovery via a temporary token is described as a target functionality and is in TODO status until the corresponding API endpoints are implemented.

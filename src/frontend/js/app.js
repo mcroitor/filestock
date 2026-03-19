@@ -1,3 +1,0 @@
-/**
- * FileStock - JS frontend application
- */

@@ -1,14 +1,34 @@
-# FileStock - file repository
+# FileStock - the file repository
 
-The web application for file storage and management.
+The file repository is a web application for storing and managing files.
 
 ## Technologies
 
 - **Backend**: PHP 8.x + SQLite
 - **Frontend**: HTML5, Native JS, CSS (Skeleton)
+- **Deployment**: Docker
 
-## Features
+## Requirements
 
-- User registration and authentication. The application does not store raw email addresses in the database. Authentication is based on email + password input, while only `email_hash` and `password_hash` are stored.
-- File upload and management. Users can upload files, view their file list, and delete files. Each file is associated with the user who uploaded it. File uploading must be followed by a file description.
-- Any guest user can download any hosted file, only registered users can upload and manage files.
+- Docker
+- Docker Compose
+
+## Usage
+
+Start:
+
+```bash
+docker-compose up -d
+```
+
+Stop:
+
+```bash
+docker-compose down
+```
+
+Access the application at `http://localhost:8080`.
+
+## License
+
+This project is licensed under the Unlicense. See the [LICENSE](LICENSE) file for details.
